@@ -4,60 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile Page</title>
-    <style>
-        body {
-            background-color: #000; /* Fundo preto */
-            color: #fff; /* Texto branco */
-            font-family: 'Georgia', serif; /* Fonte serifada para um toque clássico */
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-        h1 {
-            font-size: 3em;
-            font-weight: bold;
-            text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.4); /* Sombra para dar um efeito */
-        }
-
-        h2 {
-            font-size: 2em;
-            font-weight: lighter;
-            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
-        }
-        .container {
-            text-align: center;
-            border: 2px solid #fff; /* Bordas brancas */
-            padding: 20px;
-            border-radius: 10px;
-            background: rgba(7, 10, 197, 0.24); /* Fundo semi-transparente */
-        }
-        .top-left-button {
-            position: absolute;
-            top: 10px;  /* Ajuste a margem superior conforme necessário */
-            left: 10px; /* Ajuste a margem esquerda conforme necessário */
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            text-align: center;
-            text-decoration: none;
-            color: #fff;
-            background-color: #007bff;
-            border: none;
-            border-radius: 5px;
-        }
-        .top-left-button:hover {
-            background-color: #0056b3;
-        }
-    </style>
+    <link rel="stylesheet" href="/perfil_style.css">
 </head>
 <body>
     <a href="http://localhost:3000" class="top-left-button">Clique aqui para voltar</a>
     <div class="container">
-        <h1>Nome: <%= nomeUser %></h1>
+        <h2>Nome: <%= nomeUser %></h1>
         <h2>Idade: <%= idadeUser %></h2>
     </div>
+    <div class="container">
+        <h2>Dados provenientes do MongoDB</h2>
+        <h2>
+            <% perfil.map((perfil) => { %>
+                Nome: <%= perfil.cliente.nome %> <%= perfil.cliente.sobrenome %>
+        </h2>
+        <h2>Idade: <%= perfil.cliente.idade %></h2>  
+            <% }) %>        
+    </div>         
 </body>
 </html>
