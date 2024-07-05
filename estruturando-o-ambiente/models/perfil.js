@@ -1,19 +1,17 @@
 const { Schema } = require('mongoose');
 
 const Perfil = new Schema({
-    cliente: {
-        nome: {
-            type: String,
-            required: true,
-        },
-        sobrenome: {
-            type: String,
-            required: true,
-        },
-        idade: {
-            type: Number,
-            required: true,
-        }
+    nome: {
+        type: String,
+        required: true,
+    },
+    sobrenome: {
+        type: String,
+        required: true,
+    },
+    idade: {
+        type: Number,
+        required: true,
     }
 });
 

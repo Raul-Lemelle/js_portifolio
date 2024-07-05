@@ -16,9 +16,9 @@
         <h2>Dados provenientes do MongoDB</h2>
         <h2>
             <% perfil.map((perfil) => { %>
-                Nome: <%= perfil.cliente.nome %> <%= perfil.cliente.sobrenome %>
+                Nome: <%= perfil.nome %> <%= perfil.sobrenome %>
         </h2>
-        <h2>Idade: <%= perfil.cliente.idade %></h2>  
+        <h2>Idade: <%= perfil.idade %></h2>  
             <% }) %>        
     </div>         
 </body>
